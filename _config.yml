@@ -1,0 +1,7 @@
+title: Scam Review Hub
+description: Manual scam advisor-style website
+theme: minima
+collections:
+  sites:
+    output: true
+    permalink: /:path/
