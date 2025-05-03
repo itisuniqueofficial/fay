@@ -10,4 +10,4 @@ markdown: kramdown
 collections:
   reviews:
     output: true
-    permalink: /reviews/:path
+    permalink: /:path
