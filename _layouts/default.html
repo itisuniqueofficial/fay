@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/fay/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  {% include header.html %}
-  <main>{{ content }}</main>
-  {% include footer.html %}
+  <header>
+    <h1>Scam Review Hub</h1>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Scam Review Hub</p>
+  </footer>
 </body>
 </html>
