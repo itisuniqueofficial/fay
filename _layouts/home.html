@@ -1,0 +1,82 @@
+---
+layout: default
+---
+<div class="hero" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Scam Review Hub">
+    <meta itemprop="url" content="{{ site.url }}">
+    <h1>Verify Websites with Scam Review Hub</h1>
+    <p>Protect yourself from scams with expert analysis, trust scores, and user feedback.</p>
+    <form class="search-bar" action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="Search for a website (e.g., www.example.com)" aria-label="Search websites">
+        <input type="hidden" name="q" value="site:{{ site.url }}">
+        <button type="submit"><i class="fas fa-search"></i> Search</button>
+    </form>
+</div>
+
+<main>
+    <section class="widget time-widget" aria-labelledby="ist-time">
+        <h2 id="ist-time"><i class="fas fa-clock"></i> Current Time (IST)</h2>
+        <p id="ist-time"></p>
+    </section>
+
+    <section class="carousel" aria-labelledby="recent-reviews">
+        <h2 id="recent-reviews"><i class="fas fa-star"></i> Recent Reviews</h2>
+        <div class="carousel-inner">
+            {% for review in site.reviews limit:3 %}
+            <div class="review-card">
+                <h3>{{ review.title }}</h3>
+                <div class="rating">{{ review.trust_score }}/100</div>
+                <p>{{ review.excerpt | strip_html | truncate: 60 }}</p>
+                <p><a href="{{ review.url | relative_url }}">Read Full Review</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="carousel-controls">
+            <button onclick="moveCarousel(-1)" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+            <button onclick="moveCarousel(1)" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="widget faq-section" aria-labelledby="faq" itemscope itemtype="https://schema.org/FAQPage">
+        <h2 id="faq"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary><i class="fas fa-chevron-down"></i> <span itemprop="name">What is Scam Review Hub?</span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Scam Review Hub is a platform dedicated to helping users verify the legitimacy of websites through expert analysis, trust scores, and user feedback.</p>
+            </div>
+        </details>
+        <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary><i class="fas fa-chevron-down"></i> <span itemprop="name">How do you evaluate websites?</span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">We assess websites based on factors like domain age, SSL certificates, WHOIS data, user reviews, customer service responsiveness, and potential scam indicators.</p>
+            </div>
+        </details>
+        <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary><i class="fas fa-chevron-down"></i> <span itemprop="name">Can I submit a review?</span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Yes! Users can submit reviews via our 'Submit Review' page. Ensure your review includes detailed experiences to help others make informed decisions.</p>
+            </div>
+        </details>
+        <details itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <summary><i class="fas fa-chevron-down"></i> <span itemprop="name">Is Scam Review Hub free to use?</span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Absolutely, our platform is free for all users to access reviews and submit feedback, ensuring everyone can stay safe online.</p>
+            </div>
+        </details>
+    </section>
+
+    <section class="widget" aria-labelledby="social-feed">
+        <h2 id="social-feed"><i class="fas fa-share-alt"></i> Latest Updates</h2>
+        <div class="social-feed">
+            <div class="social-post"><i class="fab fa-x-twitter"></i> New review posted on www.example.com! Check it out.</div>
+            <div class="social-post"><i class="fab fa-linkedin"></i> Learn how to spot scam websites with our latest guide.</div>
+            <div class="social-post"><i class="fab fa-facebook"></i> Join our community to stay safe online! Follow us for updates.</div>
+        </div>
+    </section>
+
+    <section class="cta" aria-labelledby="submit-cta">
+        <h2 id="submit-cta"><i class="fas fa-pen"></i> Share Your Experience</h2>
+        <p>Encountered a suspicious website? Submit a review to help others stay safe.</p>
+        <a href="#submit">Submit a Review</a>
+    </section>
+</main>
