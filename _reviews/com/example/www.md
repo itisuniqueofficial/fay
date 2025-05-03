@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Example.com Review – Scam or Legit?"
+name: "Example.com"
 domain_name: "Example.com"
 site_url: "https://www.example.com"
 meta_description: "Is Example.com a scam or legit? Read our detailed review with trust score, scam indicators, contact info, and user feedback."
