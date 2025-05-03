@@ -1,7 +1,7 @@
 title: Scam Review Hub
 description: Verify Website Legitimacy with Expert Analysis
-url: "https://itisuniqueofficial.github.io/fay"
-baseurl: "/fay"
+url: "http://fay.itisuniqueofficial.com"
+baseurl: ""
 theme: minima
 plugins:
   - jekyll-feed
