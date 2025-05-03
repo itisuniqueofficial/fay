@@ -1,0 +1,72 @@
+---
+layout: default
+---
+<div class="hero" itemscope itemtype="https://schema.org/Review" aria-label="Review of {{ page.title }}">
+    <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="{{ page.title }}">
+        <meta itemprop="url" content="{{ page.website_url }}">
+        <meta itemprop="description" content="Review of {{ page.title }} website.">
+    </div>
+    <meta itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">
+    <meta itemprop="dateModified" content="{{ page.last_reviewed | date: '%Y-%m-%d' }}">
+
+    <h1>{{ page.title }} - Scam or Legit?</h1>
+    {% if page.access_url %}
+    <p><strong>Access Review:</strong> <a href="{{ page.access_url }}" target="_blank">{{ page.access_url }}</a></p>
+    {% endif %}
+
+    <section aria-labelledby="trust-score">
+        <h2 id="trust-score"><i class="fas fa-star"></i> Trust Score</h2>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="worstRating" content="0">
+            <meta itemprop="bestRating" content="100">
+            <span class="rating" itemprop="ratingValue">{{ page.trust_score }}</span> / 100
+        </div>
+        <p itemprop="reviewBody">{{ page.summary }}</p>
+        <div class="trust-breakdown">
+            <div><strong>Website Security</strong> {{ page.security_score }}/100</div>
+            <div><strong>User Feedback</strong> {{ page.feedback_score }}/100</div>
+            <div><strong>Transparency</strong> {{ page.transparency_score }}/100</div>
+            <div><strong>Customer Support</strong> {{ page.support_score }}/100</div>
+        </div>
+    </section>
+
+    <section aria-labelledby="site-contact">
+        <h2 id="site-contact"><i class="fas fa-envelope"></i> {{ page.title }} Contact Information</h2>
+        <div class="site-contact">
+            {{ page.contact_info | markdownify }}
+        </div>
+    </section>
+
+    <section aria-labelledby="website-analysis">
+        <h2 id="website-analysis"><i class="fas fa-server"></i> Website Analysis</h2>
+        <table>
+            {{ page.technical_info | markdownify }}
+        </table>
+    </section>
+
+    <section aria-labelledby="user-feedback">
+        <h2 id="user-feedback"><i class="fas fa-users"></i> User Feedback Summary</h2>
+        {{ page.user_feedback | markdownify }}
+    </section>
+
+    <section aria-labelledby="scam-indicators">
+        <h2 id="scam-indicators"><i class="fas fa-exclamation-triangle"></i> Potential Scam Indicators</h2>
+        {{ page.scam_indicators | markdownify }}
+    </section>
+
+    <section aria-labelledby="customer-service">
+        <h2 id="customer-service"><i class="fas fa-headset"></i> Customer Service Analysis</h2>
+        {{ page.customer_service | markdownify }}
+    </section>
+
+    <div itemprop="author" itemscope itemtype="https://schema.org/Organization">
+        <p><strong>Author:</strong> <span itemprop="name">Scam Review Hub Team</span></p>
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Scam Review Hub">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="{{ site.url }}/logo.png">
+        </div>
+    </div>
+</div>
