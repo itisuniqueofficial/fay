@@ -1,7 +1,20 @@
 title: Scam Review Hub
-description: Manual scam advisor-style website
-theme: minima
+description: Detailed scam analysis of websites using trust score, SSL, domain age, and more.
+author:
+  name: It Is Unique Official Scam Review Team
+  email: info@itisuniqueofficial.com
+url: "https://fay.itisuniqueofficial.com"
+baseurl: ""
+
 collections:
   sites:
     output: true
-    permalink: /:path/
+    permalink: /:collection/:path/
+
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
