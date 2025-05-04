@@ -1,13 +1,52 @@
 title: Scam Review Hub
 description: Verify Website Legitimacy with Expert Analysis
 url: "http://fay.itisuniqueofficial.com"
-baseurl: ""
+baseurl: "" # Don't change this unless your site is in a subdirectory
 theme: minima
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+
 markdown: kramdown
+
 collections:
   reviews:
     output: true
     permalink: /:path
+
+# SEO tag settings (optional but recommended)
+seo:
+  type: Website
+  twitter:
+    username: itisunique_x
+  facebook:
+    publisher: https://www.facebook.com/itisuniqueofficial/
+
+# Pagination config (optional)
+paginate: 10
+paginate_path: "/page:num/"
+
+# Sitemap config (optional)
+sitemap:
+  exclude:
+    - /assets/
+    - /404.html
+
+# Defaults (optional)
+defaults:
+  - scope:
+      path: ""
+      type: "reviews"
+    values:
+      layout: "review"
+      author: "Scam Review Hub"
+
+# Build settings
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
