@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "GPPrimeTheme.com Review – Scam or Legit?"
+title: "GPPrimeTheme.com Review"
 name: "GPPrimeTheme.com"
 domain_name: "gpprimetheme.com"
 site_url: "https://gpprimetheme.com/"
