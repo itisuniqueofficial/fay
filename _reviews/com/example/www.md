@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Example.com Review – Scam or Legit?"
+title: "Example.com Review"
 name: "Example.com"
 domain_name: "Example.com"
 site_url: "https://www.example.com"
